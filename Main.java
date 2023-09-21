@@ -1,0 +1,45 @@
+// "static void main" must be defined in a public class.
+import java.util.*;
+
+class Student
+{
+    String name;
+    int rollNo;
+    String branch;
+}
+
+class Printer extends Student
+{
+    public  Printer(String name, String branch, int rollNo) 
+{
+        name = this.name;
+        rollNo = this.rollNo;
+        branch = this.branch;
+}
+    
+    public void printData() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Branch: " + branch);
+        System.out.println("Student Roll No.: " + rollNo);
+    }
+}
+
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        for(int i=1; i<2; i++) 
+        {
+            System.out.print("Enter Name: ");
+            String name = sc.nextLine();
+            System.out.print("Enter Branch: ");
+            String branch = sc.nextLine();
+            System.out.print("Enter Roll No. : ");
+            int rollNo = sc.nextInt();
+            Printer p = new Printer(name, branch, rollNo);
+            p.printData();
+        }
+    }
+}
